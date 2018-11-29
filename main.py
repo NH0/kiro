@@ -3,7 +3,7 @@
 from code import *
 from kruskal import *
 
-n=68
+n=543 #pim 543, nice 68, gre 13
 distances_matrix = read_distances_csv(n)
 distribution_tab, terminal_tab = read_nodes_csv()
 k, l = len(distribution_tab), len(terminal_tab)
@@ -41,10 +41,10 @@ def nearest_vertice2(i, listeDansCycle, distances_matrix = distances_matrix) :
     return result
 
 
-def terminal_list(listeNonVisit, l_chaine) :
+def terminal_list(listeNonVisit) :
     term_list = []
     for e in listeNonVisit :
-        result = nearest_vertice(e, listeDansCycle+)
+        result = nearest_vertice(e, listeDansCycle)
         term_list.append([e, result])
     return term_list
 
@@ -74,11 +74,9 @@ def calcul():
         nbDistri-=1
     if (len(listeNonVisit)==0):
         if (nbDistri==0):
-            print(1)
             return listeb,[]
         else:
             listeb.append([i for i in range(nbDistri,k)])
-            print(2)
             return listeb,[]
     else:
         listec = []
@@ -93,12 +91,16 @@ def calcul():
                     if (result in listeTemp):
                         listeTemp.append(i)
                         compteur+=1
-                for i in listeTemp:
-                    listeNonVisit.remove(i)
-        print(3)
-        listec = terminal_list(listeNonVisit, )
+            for i in listeTemp:
+                listeNonVisit.remove(i)
+            if (len(listeTemp)>0):
+                result = nearest_vertice(listeTemp[0],listeDansCycle)
+                listeTemp = [result] + listeTemp
+                listec.append(listeTemp)
+            listeTemp = []
         return listeb,listec
 
 listeb,listec = calcul()
 print(listeb,listec)
-create_output(listeb,listec,"nice")
+print("main branche temp")
+create_output(listeb,listec,"paris-temp")
