@@ -69,5 +69,7 @@ def create_output(listeb, listec, nom):
 
 # create_output([[0,1,2],[0,3,5]],[[2,4]],"grenobletest")
 
-def search_min_node_notinkruskal(min_span, ) :
+def parse_graph(gmin):
+    
 
+def search_min_node_notinkruskal(min_span, ) :
