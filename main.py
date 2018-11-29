@@ -21,14 +21,23 @@ print(min_span)
 
 #le noeud qui boucle le chemin de longueur min
 
-def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix, k = k, l = l) :
-    min = distances_matrix[k][i]
-    result = distances_matrix[k][i]
+def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix) :
+    min = distances_matrix[0][i]
+    result = 0
     for j in listeNonVisit :
         if distances_matrix[j][i] < min :
             result = j
             min = distances_matrix[j][i]
     return result
+
+
+def terminal_list(listeNonVisit) :
+    term_list = []
+    for e in listeNonVisit :
+        result = nearest_vertice(e, listeDansCycle)
+        term_list.append([e, result])
+    return term_list
+
 
 def create_cycle(idDistri, listeNonVisit):
     listebi = [idDistri]
