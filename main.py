@@ -22,10 +22,10 @@ print(min_span)
 #le noeud qui boucle le chemin de longueur min
 
 def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix) :
-    min = distances_matrix[0][i]
-    result = 0
+    min = distances_matrix[listeNonVisit[0]][i]
+    result = listeNonVisit[0]
     for j in listeNonVisit :
-        if distances_matrix[j][i] < min :
+        if distances_matrix[j][i] <= min :
             result = j
             min = distances_matrix[j][i]
     return result
