@@ -7,12 +7,7 @@ distribution_tab, terminal_tab = code.read_nodes_csv()
 g = kruskal.Graph(n)
 for i in range(n) :
     for j in range(n) :
-        g.addEdge(i, j, distances_matrix[i,j])
+        g.addEdge(i, j, distances_matrix[i][j])
 min_span = g.KruskalMST()
 
-
-
-
-
-
-
+print(min_span)
