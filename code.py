@@ -66,4 +66,4 @@ def create_output(listeb, listec, nom):
                 txtfile.write(" "+str(i))
         txtfile.close()
 
-create_output([[0,1,2],[0,3,5]],[[2,4]],"grenobletest")
+# create_output([[0,1,2],[0,3,5]],[[2,4]],"grenobletest")
