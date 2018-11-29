@@ -3,7 +3,7 @@
 import csv
 
 def read_nodes_csv() :
-    with open('nodes.csv', newline='') as csvfile:
+    with open('nice/nodes.csv', newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=';')
         nodes_tab = []
 
@@ -25,7 +25,7 @@ def read_nodes_csv() :
 
     terminal_tab = []
     for e in nodes_tab:
-        if e[2] == 'distribution':
+        if e[2] == 'terminal':
             l = []
             for i in e[:2]:
                 l.append(float(i))
@@ -35,7 +35,7 @@ def read_nodes_csv() :
 
 
 def read_distances_csv(n) :
-    with open('distances.csv', newline='') as csvfile:
+    with open('nice/distances.csv', newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=';')
         distances_tab = []
 
@@ -66,11 +66,7 @@ def create_output(listeb, listec, nom):
             txtfile.write("c")
             for i in listeci:
                 txtfile.write(" "+str(i))
+            txtfile.write("\n")
         txtfile.close()
 
 # create_output([[0,1,2],[0,3,5]],[[2,4]],"grenobletest")
-
-def parse_graph(gmin):
-
-
-def search_min_node_notinkruskal(min_span, ) :
