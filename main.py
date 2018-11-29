@@ -52,6 +52,10 @@ def main():
         listeb.append(create_cycle(k-nbDistri,listeNonVisit))
         nbDistri-=1
     if (len(listeNonVisit)==0):
-        return listeb
+        if (nbDistri==0):
+            return listeb
+        else:
+            listeb.append([i for in range(nbDistri,k)])
+            return listeb
     else:
-        antennes_restantes(,listeNonVisit)
+        listec = terminal_list(listeNonVisit)
