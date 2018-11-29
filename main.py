@@ -34,8 +34,8 @@ def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix) :
 def terminal_list(listeNonVisit) :
     term_list = []
     for e in listeNonVisit :
-        result = nearest_vertice(e, listeDansCycle+)
-        term_list.append([e, result])
+        result = nearest_vertice(e, listeDansCycle)
+        term_list.append([result, e])
     return term_list
 
 
@@ -45,7 +45,7 @@ def create_cycle(idDistri, listeNonVisit):
     i=idDistri;
     nbElements=0;
     print(listeNonVisit)
-    while (len(listeNonVisit)>0 and nbElements<29):
+    while (len(listeNonVisit)>0 and nbElements<25):
         j = nearest_vertice(i, listeNonVisit)
         listeNonVisit.remove(j)
         listebi.append(j)
