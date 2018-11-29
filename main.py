@@ -36,4 +36,12 @@ def create_cycle(idDistri, listeNonVisit):
         listeNonVisit.remove(j)
         listebi.append(j)
         i=j
+        nbElements+=1
     return listebi
+
+def main():
+    listeNonVisit = [i for i in range k+l]
+    nbDistri = k
+    while (len(listeNonVisit)>0 and nbDistri>0):
+        create_cycle(k-nbDistri,listeNonVisit)
+        nbDistri-=1
