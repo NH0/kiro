@@ -45,7 +45,7 @@ def create_cycle(idDistri, listeNonVisit):
     i=idDistri;
     nbElements=0;
     print(listeNonVisit)
-    while (len(listeNonVisit)>0 and nbElements<25):
+    while (len(listeNonVisit)>0 and nbElements<30):
         j = nearest_vertice(i, listeNonVisit)
         listeNonVisit.remove(j)
         listebi.append(j)
