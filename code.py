@@ -53,5 +53,17 @@ def read_distances_csv(n) :
 
     return distances_matrix
 
-def create_output(listeb, listec,nom):
-    with open(nom+'.txt', newline='') as
+def create_output(listeb, listec, nom):
+    with open(nom+'.txt', 'w') as txtfile:
+        for listebi in listeb:
+            txtfile.write("b")
+            for i in listebi:
+                txtfile.write(" "+str(i))
+            txtfile.write("\n")
+        for listeci in listec:
+            txtfile.write("c")
+            for i in listeci:
+                txtfile.write(" "+str(i))
+        txtfile.close()
+
+create_output([[0,1,2],[0,3,5]],[[2,4]],"grenobletest")
