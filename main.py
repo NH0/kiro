@@ -36,3 +36,4 @@ def create_cycle(idDistri, listeNonVisit):
         listeNonVisit.remove(j)
         listebi.append(j)
         i=j
+    return listebi
