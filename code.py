@@ -3,7 +3,7 @@
 import csv
 
 def read_nodes_csv() :
-    with open('nice/nodes.csv', newline='') as csvfile:
+    with open('paris/nodes.csv', newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=';')
         nodes_tab = []
 
@@ -35,7 +35,7 @@ def read_nodes_csv() :
 
 
 def read_distances_csv(n) :
-    with open('nice/distances.csv', newline='') as csvfile:
+    with open('paris/distances.csv', newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=';')
         distances_tab = []
 

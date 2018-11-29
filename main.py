@@ -3,7 +3,7 @@
 from code import *
 from kruskal import *
 
-n=68
+n=543 #paris 543, nice 68, gre 13
 distances_matrix = read_distances_csv(n)
 distribution_tab, terminal_tab = read_nodes_csv()
 k, l = len(distribution_tab), len(terminal_tab)
@@ -31,7 +31,7 @@ def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix) :
     return result
 
 
-def terminal_list(listeNonVisit, l_chaine) :
+def terminal_list(listeNonVisit) :
     term_list = []
     for e in listeNonVisit :
         result = nearest_vertice(e, listeDansCycle+)
@@ -77,4 +77,4 @@ def calcul():
 
 listeb,listec = calcul()
 print(listeb,listec)
-create_output(listeb,listec,"nice")
+create_output(listeb,listec,"paris")
