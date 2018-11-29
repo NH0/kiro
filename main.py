@@ -1,3 +1,5 @@
+#!/home/thib/Documents/Travail/ENPC/2A_IMI/Kiro/env-kiro/bin/python3
+
 from code import *
 from kruskal import *
 

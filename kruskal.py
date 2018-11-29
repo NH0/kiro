@@ -1,3 +1,5 @@
+#!/home/thib/Documents/Travail/ENPC/2A_IMI/Kiro/env-kiro/bin/python3
+
 # Python program for Kruskal's algorithm to find
 # Minimum Spanning Tree of a given connected,
 # undirected and weighted graph

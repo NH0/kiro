@@ -1,3 +1,5 @@
+#!/home/thib/Documents/Travail/ENPC/2A_IMI/Kiro/env-kiro/bin/python3
+
 import csv
 
 def read_nodes_csv() :
