@@ -34,13 +34,8 @@ def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix) :
 def terminal_list(listeNonVisit, l_chaine) :
     term_list = []
     for e in listeNonVisit :
-<<<<<<< HEAD
-        result = nearest_vertice(e, listeDansCycle)
-        term_list.append([result, e])
-=======
         result = nearest_vertice(e, listeDansCycle+)
         term_list.append([e, result])
->>>>>>> c04377dd0bef3c39e7ae256ed6756767146e6905
     return term_list
 
 
