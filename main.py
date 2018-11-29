@@ -10,6 +10,7 @@ k, l = len(distribution_tab), len(terminal_tab)
 print(terminal_tab)
 
 listeDansCycle = []
+tousElements = []
 
 #minimum spanning
 g = Graph(n)
@@ -28,6 +29,15 @@ def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix) :
         if distances_matrix[j][i] <= min :
             result = j
             min = distances_matrix[j][i]
+    return result
+
+def nearest_vertice2(i, listeDansCycle, distances_matrix = distances_matrix) :
+    min = distances_matrix[listeDansCycle[0][0]][i]
+    result = 0
+    for j in range(len(listeDansCycle)) :
+        if (distances_matrix[listeDansCycle[j][0]][i] <= min and listeDansCycle[j][1]<5):
+            result = j
+            min = distances_matrix[listeDansCycle[j][0]][i]
     return result
 
 
@@ -71,8 +81,22 @@ def calcul():
             print(2)
             return listeb,[]
     else:
-        listec = terminal_list(listeNonVisit)
+        listec = []
+        listeTemp = []
+        tousElements = listeDansCycle
+        while (len(listeNonVisit)>0):
+            compteur = 0
+            while (len(listeTemp)<5 and compteur>0):
+                compteur = 0
+                for i in listeNonVisit:
+                    result = nearest_vertice(i,listeDansCycle+listeTemp)
+                    if (result in listeTemp):
+                        listeTemp.append(i)
+                        compteur+=1
+                for i in listeTemp:
+                    listeNonVisit.remove(i)
         print(3)
+        listec = terminal_list(listeNonVisit, )
         return listeb,listec
 
 listeb,listec = calcul()
