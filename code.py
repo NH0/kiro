@@ -1,5 +1,3 @@
-#!/home/thib/Documents/Travail/ENPC/2A_IMI/Kiro/env-kiro/bin/python3
-
 import csv
 
 def read_nodes_csv() :
@@ -20,7 +18,7 @@ def read_nodes_csv() :
         if e[2] == 'distribution' :
             l = []
             for i in e[:2] :
-                l.append(int(i))
+                l.append(float(i))
             distribution_tab.append(l)
 
     terminal_tab = []
@@ -28,8 +26,9 @@ def read_nodes_csv() :
         if e[2] == 'distribution':
             l = []
             for i in e[:2]:
-                l.append(int(i))
+                l.append(float(i))
             terminal_tab.append(l)
+
     return distribution_tab, terminal_tab
 
 
