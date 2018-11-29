@@ -55,7 +55,8 @@ def read_distances_csv(n) :
     return distances_matrix
 
 def create_output(listeb, listec, nom):
-    with open(nom+'.txt', 'w') as txtfile:
+    nom = nom+".txt"
+    with open(nom, 'w') as txtfile:
         for listebi in listeb:
             txtfile.write("b")
             for i in listebi:
@@ -70,6 +71,6 @@ def create_output(listeb, listec, nom):
 # create_output([[0,1,2],[0,3,5]],[[2,4]],"grenobletest")
 
 def parse_graph(gmin):
-    
+
 
 def search_min_node_notinkruskal(min_span, ) :

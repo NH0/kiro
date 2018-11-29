@@ -44,7 +44,7 @@ def create_cycle(idDistri, listeNonVisit):
         nbElements+=1
     return listebi
 
-def main():
+def calcul():
     listeNonVisit = [i for i in range(k,k+l)]
     nbDistri = k
     listeb = []
@@ -53,9 +53,14 @@ def main():
         nbDistri-=1
     if (len(listeNonVisit)==0):
         if (nbDistri==0):
-            return listeb
+            return listeb,[]
         else:
             listeb.append([i for in range(nbDistri,k)])
-            return listeb
+            return listeb,[]
     else:
         listec = terminal_list(listeNonVisit)
+        return listeb,listec
+
+def main():
+    listeb,listec = calcul
+    create_output(listeb,listec,"paris")
