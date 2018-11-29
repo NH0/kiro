@@ -42,6 +42,11 @@ def create_cycle(idDistri, listeNonVisit):
 def main():
     listeNonVisit = [i for i in range k+l]
     nbDistri = k
+    listeb = []
     while (len(listeNonVisit)>0 and nbDistri>0):
-        create_cycle(k-nbDistri,listeNonVisit)
+        listeb.append(create_cycle(k-nbDistri,listeNonVisit))
         nbDistri-=1
+    if (len(listeNonVisit)==0):
+        return listeb
+    else:
+        antennes_restantes(,listeNonVisit)
