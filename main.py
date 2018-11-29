@@ -25,7 +25,8 @@ def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix, k = k
     for j in listeNonVisit :
         if distances_matrix[j][i] < min :
             result = j
-    return j
+            min = distances_matrix[j][i]
+    return result
 
 def create_cycle(idDistri, listeNonVisit):
     listebi = [idDistri]
