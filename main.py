@@ -3,7 +3,7 @@
 from code import *
 from kruskal import *
 
-n=543 #paris 543, nice 68, gre 13
+n=68 #paris 543, nice 68, gre 13
 distances_matrix = read_distances_csv(n)
 distribution_tab, terminal_tab = read_nodes_csv()
 k, l = len(distribution_tab), len(terminal_tab)
