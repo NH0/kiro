@@ -23,14 +23,14 @@ def read_nodes_csv() :
                 l.append(int(i))
             distribution_tab.append(l)
 
-    distribution_tab = []
+    terminal_tab = []
     for e in nodes_tab:
         if e[2] == 'distribution':
             l = []
             for i in e[:2]:
                 l.append(int(i))
-            distribution_tab.append(l)
-    return nodes_tab
+            terminal_tab.append(l)
+    return distribution_tab, terminal_tab
 
 
 def read_distances_csv(n) :
