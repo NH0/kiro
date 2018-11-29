@@ -54,8 +54,7 @@ def create_cycle(idDistri, listeNonVisit):
     listeDansCycle.append(idDistri)
     i=idDistri;
     nbElements=0;
-    print(listeNonVisit)
-    while (len(listeNonVisit)>0 and nbElements<29):
+    while (len(listeNonVisit)>0 and nbElements<25):
         j = nearest_vertice(i, listeNonVisit)
         listeNonVisit.remove(j)
         listebi.append(j)
@@ -66,7 +65,6 @@ def create_cycle(idDistri, listeNonVisit):
 
 def calcul():
     listeNonVisit = [i for i in range(k,k+l)]
-    print(listeNonVisit)
     nbDistri = k
     listeb = []
     while (len(listeNonVisit)>0 and nbDistri>0):
@@ -83,16 +81,25 @@ def calcul():
         listeTemp = []
         tousElements = listeDansCycle
         while (len(listeNonVisit)>0):
-            compteur = 0
+            compteur = 1
             while (len(listeTemp)<5 and compteur>0):
                 compteur = 0
-                for i in listeNonVisit:
-                    result = nearest_vertice(i,listeDansCycle+listeTemp)
-                    if (result in listeTemp):
-                        listeTemp.append(i)
-                        compteur+=1
+                if (len(listeNonVisit)>0):
+                    init = listeNonVisit[0]
+                    result = nearest_vertice(init, listeDansCycle)
+                    listeTemp.append(init)
+        #            listeNonVisit.remove(init)
+                    print(init,"----------&&&&&&&&&&&&&&&&----------\n\n")
+                    for i in listeNonVisit:
+                        #print(i)
+                        result = nearest_vertice(i,listeDansCycle+listeTemp)
+                        if (result in listeTemp):
+                            listeTemp.append(i)
+                            compteur+=1
+                    listeNonVisit.remove(init)
             for i in listeTemp:
-                listeNonVisit.remove(i)
+                if i in listeNonVisit:
+                    listeNonVisit.remove(i)
             if (len(listeTemp)>0):
                 result = nearest_vertice(listeTemp[0],listeDansCycle)
                 listeTemp = [result] + listeTemp
