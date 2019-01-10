@@ -77,4 +77,4 @@ def calcul():
 
 listeb,listec = calcul()
 print(listeb,listec)
-create_output(listeb,listec,"paris")
+create_output(listeb,listec,"nice-test1")
