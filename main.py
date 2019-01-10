@@ -1,7 +1,6 @@
 #!/home/thib/Documents/Travail/ENPC/2A_IMI/Kiro/env-kiro/bin/python3
 
 from code import *
-from kruskal import *
 
 n=543 #pim 543, nice 68, gre 13
 distances_matrix = read_distances_csv(n)
@@ -10,14 +9,8 @@ k, l = len(distribution_tab), len(terminal_tab)
 print(terminal_tab)
 
 listeDansCycle = []
+listeDansChaine = []
 tousElements = []
-
-#minimum spanning
-g = Graph(n)
-for i in range(n) :
-    for j in range(n) :
-        g.addEdge(i, j, distances_matrix[j][i])
-min_span = g.KruskalMST()
 
 
 #le noeud qui boucle le chemin de longueur min
@@ -31,7 +24,7 @@ def nearest_vertice(i, listeNonVisit, distances_matrix = distances_matrix) :
             min = distances_matrix[j][i]
     return result
 
-def nearest_vertice2(i, listeDansCycle, distances_matrix = distances_matrix) :
+def nearest_vertice2(i, listeDansCycle, listeDansChaine, distances_matrix = distances_matrix) :
     min = distances_matrix[listeDansCycle[0][0]][i]
     result = 0
     for j in range(len(listeDansCycle)) :
@@ -41,12 +34,12 @@ def nearest_vertice2(i, listeDansCycle, distances_matrix = distances_matrix) :
     return result
 
 
-def terminal_list(listeNonVisit) :
-    term_list = []
-    for e in listeNonVisit :
-        result = nearest_vertice(e, listeDansCycle)
-        term_list.append([e, result])
-    return term_list
+# def terminal_list(listeNonVisit) :
+#     term_list = []
+#     for e in listeNonVisit :
+#         result = nearest_vertice(e, listeDansCycle)
+#         term_list.append([e, result])
+#     return term_list
 
 
 def create_cycle(idDistri, listeNonVisit):
