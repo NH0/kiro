@@ -70,34 +70,8 @@ def calcul():
             listeb.append([i for i in range(nbDistri,k)])
             return listeb,[]
     else:
-        listec = []
-        listeTemp = []
-        tousElements = listeDansCycle
         while (len(listeNonVisit)>0):
-            compteur = 1
-            while (len(listeTemp)<5 and compteur>0):
-                compteur = 0
-                if (len(listeNonVisit)>0):
-                    init = listeNonVisit[0]
-                    result = nearest_vertice(init, listeDansCycle)
-                    listeTemp.append(init)
-        #            listeNonVisit.remove(init)
-                    print(init,"----------&&&&&&&&&&&&&&&&----------\n\n")
-                    for i in listeNonVisit:
-                        #print(i)
-                        result = nearest_vertice(i,listeDansCycle+listeTemp)
-                        if (result in listeTemp):
-                            listeTemp.append(i)
-                            compteur+=1
-                    listeNonVisit.remove(init)
-            for i in listeTemp:
-                if i in listeNonVisit:
-                    listeNonVisit.remove(i)
-            if (len(listeTemp)>0):
-                result = nearest_vertice(listeTemp[0],listeDansCycle)
-                listeTemp = [result] + listeTemp
-                listec.append(listeTemp)
-            listeTemp = []
+
         return listeb,listec
 
 listeb,listec = calcul()
