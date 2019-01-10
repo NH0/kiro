@@ -2,19 +2,20 @@
 
 from code import *
 
-ville="grenoble"
+VILLE="pim"
+TAILLE_BOUCLE = 20
 
-if ville=="nice":
+if VILLE=="nice":
     n=68
-elif ville=="pim":
+elif VILLE=="pim":
     n=543
-elif ville=="grenoble":
+elif VILLE=="grenoble":
     n=13
 else:
     raise ValueError("ville doit etre une des trois villes : pim, nice ou grenoble !")
 #paris 543, nice 68, gre 13
-distances_matrix = read_distances_csv(n,ville)
-distribution_tab, terminal_tab = read_nodes_csv(ville)
+distances_matrix = read_distances_csv(n,VILLE)
+distribution_tab, terminal_tab = read_nodes_csv(VILLE)
 k, l = len(distribution_tab), len(terminal_tab)
 print(terminal_tab)
 
@@ -47,7 +48,7 @@ def create_cycle(idDistri, listeNonVisit):
     i=idDistri;
     nbElements=0;
     print(listeNonVisit)
-    while (len(listeNonVisit)>0 and nbElements<30):
+    while (len(listeNonVisit)>0 and nbElements<TAILLE_BOUCLE):
         j = nearest_vertice(i, listeNonVisit)
         listeNonVisit.remove(j)
         listebi.append(j)
@@ -79,4 +80,4 @@ def calcul():
 
 listeb,listec = calcul()
 print(listeb,listec)
-create_output(listeb,listec,ville)
+create_output(listeb,listec,VILLE)
