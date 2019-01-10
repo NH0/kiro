@@ -3,8 +3,8 @@
 import csv
 
 
-def read_nodes_csv():
-    with open('nice/nodes.csv', newline='') as csvfile:
+def read_nodes_csv(ville):
+    with open(ville+'/nodes.csv', newline='') as csvfile:
         spam_reader = csv.reader(csvfile, delimiter=';')
         nodes_tab = []
         i = 0
@@ -30,8 +30,8 @@ def read_nodes_csv():
     return distribution_tab, terminal_tab
 
 
-def read_distances_csv(n):
-    with open('nice/distances.csv', newline='') as csvfile:
+def read_distances_csv(n,ville):
+    with open(ville+'/distances.csv', newline='') as csvfile:
         spam_reader = csv.reader(csvfile, delimiter=';')
         distances_tab = []
         i = 0

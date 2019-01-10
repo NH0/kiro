@@ -1,22 +1,24 @@
 #!/home/thib/Documents/Travail/ENPC/2A_IMI/Kiro/env-kiro/bin/python3
 
 from code import *
-from kruskal import *
 
-n=68 #paris 543, nice 68, gre 13
-distances_matrix = read_distances_csv(n)
-distribution_tab, terminal_tab = read_nodes_csv()
+ville="grenoble"
+
+if ville=="nice":
+    n=68
+elif ville=="pim":
+    n=543
+elif ville=="grenoble":
+    n=13
+else:
+    raise ValueError("ville doit etre une des trois villes : pim, nice ou grenoble !")
+#paris 543, nice 68, gre 13
+distances_matrix = read_distances_csv(n,ville)
+distribution_tab, terminal_tab = read_nodes_csv(ville)
 k, l = len(distribution_tab), len(terminal_tab)
 print(terminal_tab)
 
 listeDansCycle = []
-
-#minimum spanning
-g = Graph(n)
-for i in range(n) :
-    for j in range(n) :
-        g.addEdge(i, j, distances_matrix[j][i])
-min_span = g.KruskalMST()
 
 
 #le noeud qui boucle le chemin de longueur min
@@ -77,4 +79,4 @@ def calcul():
 
 listeb,listec = calcul()
 print(listeb,listec)
-create_output(listeb,listec,"nice-test1")
+create_output(listeb,listec,ville)
